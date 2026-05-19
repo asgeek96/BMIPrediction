@@ -21,9 +21,32 @@ This project analyzes a dataset of **500 individuals** (male & female) to unders
 
 ---
 
-## 📁 Dataset
+## 📁 Repository Structure
 
-**File:** `500_Person_Gender_Height_Weight_Index.csv`
+```
+BMIPrediction/
+│
+├── 📓 notebooks/
+│   └── BMI_predict.ipynb              # Main analysis notebook
+│
+├── 📊 data/
+│   └── 500_Person_Gender_Height_Weight_Index.csv   # Dataset
+│
+├── 🖼️ images/
+│   ├── bmi_histogram.png
+│   ├── gender_bmi_overview.png
+│   ├── female_male_bmi_comparison.png
+│   └── height_vs_weight_scatter.png
+│
+├── 📄 README.md
+└── 📄 requirements.txt
+```
+
+---
+
+## 📊 Dataset
+
+**File:** `data/500_Person_Gender_Height_Weight_Index.csv`
 
 | Column | Description |
 |--------|-------------|
@@ -32,16 +55,29 @@ This project analyzes a dataset of **500 individuals** (male & female) to unders
 | Weight | Weight in kg |
 | Index | BMI category (0–5) |
 
-500 records, no missing values.
+500 records · No missing values · Balanced gender split
 
 ---
 
 ## 📈 Key Findings
 
 - Dataset is **gender-balanced**: ~51% Female, ~49% Male
-- Most individuals fall in the **Extreme Obesity** category
+- Most individuals fall in the **Extreme Obesity** category (39.6%)
 - BMI distribution pattern is broadly **similar across genders**
 - Height and weight show a clear **positive correlation**
+
+---
+
+## 📊 Visualizations
+
+### Gender Split & Overall BMI Category Distribution
+![Gender & BMI Overview](images/gender_bmi_overview.png)
+
+### Female vs Male BMI Category Comparison
+![Female vs Male Comparison](images/female_male_bmi_comparison.png)
+
+### Height vs Weight (colored by BMI Status)
+![Height vs Weight Scatter](images/bmi_histogram.png)
 
 ---
 
@@ -65,27 +101,15 @@ cd BMIPrediction
 
 **2. Install dependencies**
 ```bash
-pip install pandas matplotlib seaborn scikit-learn
+pip install -r requirements.txt
 ```
 
-**3. Run the notebook**
+**3. Launch the notebook**
 ```bash
-jupyter notebook BMI_predict.ipynb
+jupyter notebook notebooks/BMI_predict.ipynb
 ```
 
-> Make sure `500_Person_Gender_Height_Weight_Index.csv` is in the same folder as the notebook.
-
----
-
-## 📊 Visualizations
-
-The notebook produces the following charts:
-
-- **BMI Histogram** — distribution of BMI values across all 500 people
-- **Gender Donut Chart** — Male vs Female split
-- **BMI Category Donut Chart** — overall health category breakdown
-- **Female vs Male BMI Comparison** — side-by-side category breakdown by gender
-- **Height vs Weight Scatter Plot** — colored by BMI status
+> The notebook reads the dataset from `../data/500_Person_Gender_Height_Weight_Index.csv` — keep the folder structure intact.
 
 ---
 
